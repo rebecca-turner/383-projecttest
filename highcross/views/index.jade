@@ -1,0 +1,11 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+  p Here are a selection of the latest images from the Celebrate Colour campaign
+  for image in images
+    p 
+       img(src="#{image.image}", onerror="this.style.display='none'", width="200", style="margin:12px;")
+       input(type="button", onclick="rejectImage('#{image.id}');", value="Reject")
+       input(type="button", onclick="approveImage('#{image.id}');", value="Approve")
